@@ -70,11 +70,11 @@
     
     .lang-toggle {
       background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
-      color: var(--fg); font-size: 10px; font-family: 'DM Sans', sans-serif;
-      font-weight: 500; letter-spacing: 0.1em; padding: 4px 10px; cursor: pointer;
+      font-size: 16px; padding: 4px 8px; cursor: pointer;
       transition: all 0.2s ease;
+      display: flex; align-items: center; justify-content: center;
     }
-    .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-toggle:hover { border-color: var(--accent); transform: scale(1.05); }
 
     .mobile-toggle { display: none; background: none; border: none; color: var(--fg); cursor: pointer; padding: 4px; }
     .mobile-toggle svg { width: 22px; height: 22px; }
@@ -325,7 +325,7 @@
           <li><a href="#education" onclick="closeMenu()" data-i18n="nav-education">Education</a></li>
           <li><a href="#contact" onclick="closeMenu()" data-i18n="nav-contact">Contact</a></li>
         </ul>
-        <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">IT</button>
+        <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn" title="Cambia lingua">🇬🇧</button>
         <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"/>
@@ -584,7 +584,7 @@
 
     function toggleLanguage() {
       currentLang = currentLang === 'en' ? 'it' : 'en';
-      document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'IT' : 'EN';
+      document.getElementById('lang-btn').textContent = currentLang === 'en' ? '🇬🇧' : '🇮🇹';
       updateTranslations();
       
       // Se c'è un progetto aperto, ricrea il contenuto per tradurlo
