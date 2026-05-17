@@ -44,7 +44,7 @@
       overflow-x: hidden;
     }
 
-    .page { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+    .page { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
 
     /* NAV */
     nav {
@@ -53,19 +53,31 @@
       border-bottom: 1px solid var(--border);
     }
     nav .inner {
-      max-width: 720px; margin: 0 auto; padding: 0 2rem;
+      max-width: 860px; margin: 0 auto; padding: 0 2rem;
       height: 52px; display: flex; align-items: center; justify-content: space-between;
     }
     nav .logo {
       font-family: 'DM Serif Display', serif; font-size: 17px;
       color: var(--fg); text-decoration: none; letter-spacing: -0.02em;
     }
-    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav .nav-right { display: flex; align-items: center; gap: 2rem; }
+    nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
     nav ul a {
       font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
       text-decoration: none; color: var(--fg-muted); transition: color 0.2s;
     }
     nav ul a:hover { color: var(--accent); }
+    
+    .lang-toggle {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      color: var(--fg); font-size: 10px; font-family: 'DM Sans', sans-serif;
+      font-weight: 500; letter-spacing: 0.1em; padding: 4px 10px; cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    .mobile-toggle { display: none; background: none; border: none; color: var(--fg); cursor: pointer; padding: 4px; }
+    .mobile-toggle svg { width: 22px; height: 22px; }
 
     /* HERO */
     .hero { padding-top: 140px; padding-bottom: 80px; border-bottom: 1px solid var(--border); }
@@ -77,7 +89,7 @@
       font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(42px, 7vw, 68px);
       line-height: 1.05; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 1.5rem;
     }
-    .hero-desc { max-width: 480px; color: var(--fg-muted); font-size: 15px; line-height: 1.85; margin-bottom: 2.5rem; font-weight: 400; }
+    .hero-desc { max-width: 540px; color: var(--fg-muted); font-size: 15px; line-height: 1.85; margin-bottom: 2.5rem; font-weight: 400; }
     .hero-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
     .btn-primary {
       display: inline-block; padding: 10px 24px; background: var(--accent); color: #fff;
@@ -86,20 +98,16 @@
     }
     .btn-primary:hover { background: var(--accent-hover); }
     
-    .btn-secondary {
-      background: var(--surface); color: var(--fg); border: 1px solid var(--border);
-    }
-    .btn-secondary:hover {
-      background: var(--bg); border-color: var(--accent); color: var(--accent);
-    }
+    .btn-secondary { background: var(--surface); color: var(--fg); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--bg); border-color: var(--accent); color: var(--accent); }
 
-    .hero-links a.link-plain, .hero-links button.link-plain {
+    .hero-links button.link-plain, .hero-links a.link-plain {
       font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
       color: var(--fg-muted); text-decoration: none; border: none; background: none;
       border-bottom: 1px solid var(--border); padding-bottom: 1px;
       cursor: pointer; transition: color 0.2s, border-color 0.2s;
     }
-    .hero-links a.link-plain:hover, .hero-links button.link-plain:hover { color: var(--accent); border-color: var(--accent); }
+    .hero-links button.link-plain:hover, .hero-links a.link-plain:hover { color: var(--accent); border-color: var(--accent); }
 
     /* SECTIONS */
     section { padding: 72px 0; border-bottom: 1px solid var(--border); }
@@ -109,13 +117,13 @@
     }
 
     /* ABOUT */
-    .about-text { font-size: 16px; line-height: 1.85; color: var(--fg-muted); max-width: 600px; font-weight: 400; }
+    .about-text { font-size: 16px; line-height: 1.85; color: var(--fg-muted); max-width: 700px; font-weight: 400; }
     .about-text strong { color: var(--fg); font-weight: 500; }
 
     /* TIMELINE */
     .timeline { display: flex; flex-direction: column; }
     .timeline-item {
-      display: grid; grid-template-columns: 120px 1fr; gap: 0 2rem;
+      display: grid; grid-template-columns: 140px 1fr; gap: 0 2rem;
       padding: 2rem 0; border-top: 1px solid var(--border);
       cursor: pointer;
     }
@@ -161,7 +169,7 @@
     /* EDUCATION */
     .edu-item {
       padding: 2rem 0; border-top: 1px solid var(--border);
-      display: grid; grid-template-columns: 120px 1fr; gap: 0 2rem;
+      display: grid; grid-template-columns: 140px 1fr; gap: 0 2rem;
     }
     .edu-item:last-child { border-bottom: 1px solid var(--border); }
     .edu-year { font-size: 12px; font-weight: 500; color: var(--fg-muted); padding-top: 4px; letter-spacing: 0.02em; }
@@ -180,8 +188,7 @@
       border-radius: var(--radius-md); transition: background 0.2s, border-color 0.2s;
     }
     .contact-item:hover { background: var(--accent); border-color: var(--accent); }
-    .contact-item:hover .contact-label,
-    .contact-item:hover .contact-value { color: #fff; }
+    .contact-item:hover .contact-label, .contact-item:hover .contact-value { color: #fff; }
     .contact-label {
       font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--fg-muted); transition: color 0.2s;
@@ -192,11 +199,21 @@
     footer { padding: 3rem 0; display: flex; justify-content: space-between; align-items: center; }
     footer p { font-size: 11px; font-weight: 400; color: var(--fg-faint); letter-spacing: 0.06em; }
 
-    /* RESPONSIVE */
-    @media (max-width: 560px) {
+    /* RESPONSIVE & MOBILE MENU */
+    @media (max-width: 700px) {
       .timeline-item, .edu-item { grid-template-columns: 1fr; gap: 4px; }
       .skills-grid, .contact-grid { grid-template-columns: 1fr; }
-      nav ul { gap: 1.2rem; }
+      
+      .mobile-toggle { display: block; }
+      nav ul {
+        display: none;
+        position: absolute; top: 52px; left: 0; right: 0;
+        background: var(--bg); border-bottom: 1px solid var(--border);
+        flex-direction: column; gap: 1.5rem; padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+      nav ul.open { display: flex; }
+      .nav-right { gap: 1rem; }
     }
 
     /* ══ PROJECT OVERLAY ══ */
@@ -226,7 +243,7 @@
     .overlay-back svg { width: 14px; height: 14px; }
     .overlay-breadcrumb { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--fg-faint); letter-spacing: 0.06em; }
 
-    .overlay-content { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .overlay-content { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
     .overlay-eyebrow {
       font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300;
       letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 1rem;
@@ -300,75 +317,76 @@
   <nav>
     <div class="inner">
       <a href="#" class="logo">Mattia Rumolo</a>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul id="nav-links">
+          <li><a href="#about" onclick="closeMenu()" data-i18n="nav-about">About</a></li>
+          <li><a href="#projects" onclick="closeMenu()" data-i18n="nav-projects">Projects</a></li>
+          <li><a href="#skills" onclick="closeMenu()" data-i18n="nav-skills">Skills</a></li>
+          <li><a href="#education" onclick="closeMenu()" data-i18n="nav-education">Education</a></li>
+          <li><a href="#contact" onclick="closeMenu()" data-i18n="nav-contact">Contact</a></li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">IT</button>
+        <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </nav>
 
   <div class="page">
 
     <header class="hero">
-      <p class="hero-eyebrow">Engineering Physics · Politecnico di Milano</p>
-      <h1>Nano-systems<br />& Embedded<br />Engineering</h1>
-      <p class="hero-desc">M.Sc. candidate specialising in 2D material device physics, ISO-classified cleanroom nano-fabrication, and ultra-low-power embedded firmware. Based in Milan.</p>
+      <p class="hero-eyebrow" data-i18n="hero-eyebrow">Engineering Physics · Politecnico di Milano</p>
+      <h1 data-i18n="hero-title">Nano-systems<br />& Embedded<br />Engineering</h1>
+      <p class="hero-desc" data-i18n="hero-desc">M.Sc. candidate specialising in 2D material device physics, ISO-classified cleanroom nano-fabrication, and ultra-low-power embedded firmware. Based in Milan.</p>
       <div class="hero-links">
-        <a href="mailto:mattia.rumolo@mail.polimi.it" class="btn-primary">Get in touch</a>
-        <a href="assets/Mattia_Rumolo_Resume_Definitivo.pdf" download="Mattia_Rumolo_CV.pdf" class="btn-primary btn-secondary">Download CV</a>
-        <button class="link-plain" id="copy-btn" onclick="copyEmail()">Copy email</button>
+        <a href="mailto:mattia.rumolo@mail.polimi.it" class="btn-primary" data-i18n="btn-contact">Get in touch</a>
+        <a href="assets/Mattia_Rumolo_Resume_Definitivo.pdf" download="Mattia_Rumolo_CV.pdf" class="btn-primary btn-secondary" data-i18n="btn-cv">Download CV</a>
+        <button class="link-plain" id="copy-btn" onclick="copyEmail()" data-i18n="btn-copy">Copy email</button>
         <a href="https://linkedin.com/in/mattia-rumolo" target="_blank" class="link-plain">LinkedIn ↗</a>
       </div>
     </header>
 
     <section id="about">
-      <p class="section-label">About</p>
-      <p class="about-text">
+      <p class="section-label" data-i18n="nav-about">About</p>
+      <p class="about-text" data-i18n="about-text">
         I work at the intersection of <strong>condensed matter physics</strong> and <strong>embedded engineering</strong> — from fabricating 2D heterostructure transistors in ISO 6 cleanrooms to writing low-power firmware for smart wearable devices.<br /><br />
         My M.Sc. curriculum at Politecnico di Milano was co-developed with <strong>STMicroelectronics</strong>, with a focus on extreme miniaturisation, solid-state device modelling, and advanced MEMS integration. I enjoy problems that live at the boundary between the physical world and the digital one.
       </p>
     </section>
 
     <section id="projects">
-      <p class="section-label">Research & Projects</p>
+      <p class="section-label" data-i18n="section-projects">Research & Projects</p>
       <div class="timeline">
 
         <div class="timeline-item" onclick="openProject('eyewear')">
-          <div class="timeline-date">Feb 2025<br />– Present</div>
+          <div class="timeline-date" data-i18n="date-eyewear">Feb 2025<br />– Present</div>
           <div class="timeline-body">
-            <h3>Smart Sensory Eyewear <span class="timeline-arrow">→</span></h3>
+            <h3><span data-i18n="title-eyewear">Smart Sensory Eyewear</span> <span class="timeline-arrow">→</span></h3>
             <div class="org">EssilorLuxottica Smart Eyewear Lab</div>
-            <p>Developing STM32U5 firmware (Cortex-M33) that interfaces an AS7341 spectrometer and a digital MEMS microphone for a smart-glasses prototype. Power optimised through LPBAM Stop 2 mode acquisition.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" onclick="openProject('keyboard')">
-          <div class="timeline-date">Spring 2026</div>
-          <div class="timeline-body">
-            <h3>Custom Mechanical Keyboard <span class="timeline-arrow">→</span></h3>
-            <div class="org">Hardware Prototyping</div>
-            <p>Designed and assembled a mechanical keyboard from scratch, including custom PCB design, 3D-printed housing (PETG), and embedded firmware configuration.</p>
+            <p data-i18n="desc-eyewear">Developing STM32U5 firmware (Cortex-M33) that interfaces an AS7341 spectrometer and a digital MEMS microphone for a smart-glasses prototype. Power optimised through LPBAM Stop 2 mode acquisition.</p>
           </div>
         </div>
 
         <div class="timeline-item" onclick="openProject('mos2')">
           <div class="timeline-date">May 2024<br />– Sept 2024</div>
           <div class="timeline-body">
-            <h3>Plasmon-Enhanced MoS₂ Transistor <span class="timeline-arrow">→</span></h3>
+            <h3><span data-i18n="title-mos2">Plasmon-Enhanced MoS₂ Transistor</span> <span class="timeline-arrow">→</span></h3>
             <div class="org">L-NESS & PoliFab — B.Sc. Thesis</div>
-            <p>Engineered a 2D heterostructure FET with a graphene back-gate, hBN dielectric, and MoS₂ channel. Added Au plasmonic nanostructures to enhance light responsivity.</p>
+            <p data-i18n="desc-mos2">Engineered a 2D heterostructure FET with a graphene back-gate, hBN dielectric, and MoS₂ channel. Added Au plasmonic nanostructures to enhance light responsivity.</p>
           </div>
         </div>
 
         <div class="timeline-item" onclick="openProject('echoflow')">
           <div class="timeline-date">Sept 2024<br />– Jan 2025</div>
           <div class="timeline-body">
-            <h3>EchoFlow — Ultrasonic Traffic Monitor <span class="timeline-arrow">→</span></h3>
-            <div class="org">Academic Project</div>
-            <p>Designed a distributed traffic-sensing network with Arduino and ultrasonic sensors. Implemented scalar Kalman filtering for noise reduction, achieving velocity estimation error below 20%.</p>
+            <h3><span data-i18n="title-echoflow">EchoFlow — Ultrasonic Traffic Monitor</span> <span class="timeline-arrow">→</span></h3>
+            <div class="org" data-i18n="org-echoflow">Academic Project</div>
+            <p data-i18n="desc-echoflow">Designed a distributed traffic-sensing network with Arduino and ultrasonic sensors. Implemented scalar Kalman filtering for noise reduction, achieving velocity estimation error below 20%.</p>
           </div>
         </div>
 
@@ -376,19 +394,19 @@
     </section>
 
     <section id="skills">
-      <p class="section-label">Technical Skills</p>
+      <p class="section-label" data-i18n="nav-skills">Technical Skills</p>
       <div class="skills-grid">
         <div class="skill-block">
-          <h4>Nano-fabrication</h4>
+          <h4 data-i18n="skill-nano">Nano-fabrication</h4>
           <ul><li>EBL · Raith Voyager</li><li>RIE</li><li>PVD · ALD</li><li>Spin Coating</li><li>ISO 6/8 Cleanroom</li></ul>
         </div>
         <div class="skill-block">
-          <h4>Device Physics</h4>
+          <h4 data-i18n="skill-device">Device Physics</h4>
           <ul><li>Solid-State Physics</li><li>2D Materials (MoS₂, hBN, Graphene)</li><li>FET Architecture</li><li>MEMS Design</li><li>Quantum Mechanics</li></ul>
         </div>
         <div class="skill-block">
-          <h4>Embedded Systems</h4>
-          <ul><li>STM32U5 · Cortex-M33</li><li>Embedded C</li><li>LPBAM</li><li>PCB Design</li><li>Arduino</li><li>3D Printing (PETG)</li></ul>
+          <h4 data-i18n="skill-embedded">Embedded Systems</h4>
+          <ul><li>STM32U5 · Cortex-M33</li><li>Embedded C</li><li>LPBAM</li><li>PCB Design</li><li>Arduino</li><li>3D Printing</li><li>Fast Prototyping</li></ul>
         </div>
         <div class="skill-block">
           <h4>Software</h4>
@@ -398,27 +416,27 @@
     </section>
 
     <section id="education">
-      <p class="section-label">Education</p>
+      <p class="section-label" data-i18n="nav-education">Education</p>
       <div class="edu-item">
         <div class="edu-year">2025 – 2027</div>
         <div class="edu-body">
-          <h3>M.Sc. Engineering Physics</h3>
+          <h3 data-i18n="edu-msc-title">M.Sc. Engineering Physics</h3>
           <div class="inst">Politecnico di Milano</div>
-          <p>Micro and Nano-systems track, co-developed with STMicroelectronics. Core topics: condensed matter physics, semiconductor device physics, physical modelling & simulation, advanced nano-fabrication, and MEMS integration.</p>
+          <p data-i18n="edu-msc-desc">Micro and Nano-systems track, co-developed with STMicroelectronics. Core topics: condensed matter physics, semiconductor device physics, physical modelling & simulation, advanced nano-fabrication, and MEMS integration.</p>
         </div>
       </div>
       <div class="edu-item">
         <div class="edu-year">2022 – 2025</div>
         <div class="edu-body">
-          <h3>B.Sc. Physics Engineering</h3>
+          <h3 data-i18n="edu-bsc-title">B.Sc. Physics Engineering</h3>
           <div class="inst">Politecnico di Milano</div>
-          <p>Focus on quantum mechanics, optics, and material science. Thesis: <em>Fabrication and characterisation of integrated plasmonic structures on an MoS₂ transistor</em>.</p>
+          <p data-i18n="edu-bsc-desc">Focus on quantum mechanics, optics, and material science. Thesis: <em>Fabrication and characterisation of integrated plasmonic structures on an MoS₂ transistor</em>.</p>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <p class="section-label">Contact</p>
+      <p class="section-label" data-i18n="nav-contact">Contact</p>
       <div class="contact-grid">
         <a href="mailto:mattia.rumolo@mail.polimi.it" class="contact-item">
           <span class="contact-label">Email</span>
@@ -429,19 +447,19 @@
           <span class="contact-value">linkedin.com/in/mattia-rumolo</span>
         </a>
         <a href="#" class="contact-item">
-          <span class="contact-label">Location</span>
-          <span class="contact-value">Milan, Italy</span>
+          <span class="contact-label" data-i18n="contact-loc-label">Location</span>
+          <span class="contact-value" data-i18n="contact-loc-val">Milan, Italy</span>
         </a>
         <a href="#" class="contact-item">
-          <span class="contact-label">Languages</span>
-          <span class="contact-value">Italian (native) · English C1</span>
+          <span class="contact-label" data-i18n="contact-lang-label">Languages</span>
+          <span class="contact-value" data-i18n="contact-lang-val">Italian (native) · English C1</span>
         </a>
       </div>
     </section>
 
     <footer>
       <p>© 2026 Mattia Rumolo</p>
-      <p>Milan, Italy</p>
+      <p data-i18n="footer-loc">Milan, Italy</p>
     </footer>
   </div>
 
@@ -452,7 +470,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M19 12H5M12 5l-7 7 7 7"/>
         </svg>
-        Back
+        <span id="overlay-back-text">Back</span>
       </button>
       <span class="overlay-breadcrumb" id="overlay-breadcrumb"></span>
     </div>
@@ -470,34 +488,172 @@
   </div>
 
   <script>
+    /* ── I18N DICTIONARY ── */
+    let currentLang = 'en';
+
+    const translations = {
+      en: {
+        "nav-about": "About",
+        "nav-projects": "Projects",
+        "nav-skills": "Skills",
+        "nav-education": "Education",
+        "nav-contact": "Contact",
+        "hero-eyebrow": "Engineering Physics · Politecnico di Milano",
+        "hero-title": "Nano-systems<br />& Embedded<br />Engineering",
+        "hero-desc": "M.Sc. candidate specialising in 2D material device physics, ISO-classified cleanroom nano-fabrication, and ultra-low-power embedded firmware. Based in Milan.",
+        "btn-contact": "Get in touch",
+        "btn-cv": "Download CV",
+        "btn-copy": "Copy email",
+        "about-text": "I work at the intersection of <strong>condensed matter physics</strong> and <strong>embedded engineering</strong> — from fabricating 2D heterostructure transistors in ISO 6 cleanrooms to writing low-power firmware for smart wearable devices.<br /><br />My M.Sc. curriculum at Politecnico di Milano was co-developed with <strong>STMicroelectronics</strong>, with a focus on extreme miniaturisation, solid-state device modelling, and advanced MEMS integration. I enjoy problems that live at the boundary between the physical world and the digital one.",
+        "section-projects": "Research & Projects",
+        "date-eyewear": "Feb 2025<br />– Present",
+        "title-eyewear": "Smart Sensory Eyewear",
+        "desc-eyewear": "Developing STM32U5 firmware (Cortex-M33) that interfaces an AS7341 spectrometer and a digital MEMS microphone for a smart-glasses prototype. Power optimised through LPBAM Stop 2 mode acquisition.",
+        "title-mos2": "Plasmon-Enhanced MoS₂ Transistor",
+        "desc-mos2": "Engineered a 2D heterostructure FET with a graphene back-gate, hBN dielectric, and MoS₂ channel. Added Au plasmonic nanostructures to enhance light responsivity.",
+        "title-echoflow": "EchoFlow — Ultrasonic Traffic Monitor",
+        "org-echoflow": "Academic Project",
+        "desc-echoflow": "Designed a distributed traffic-sensing network with Arduino and ultrasonic sensors. Implemented scalar Kalman filtering for noise reduction, achieving velocity estimation error below 20%.",
+        "skill-nano": "Nano-fabrication",
+        "skill-device": "Device Physics",
+        "skill-embedded": "Embedded Systems",
+        "edu-msc-title": "M.Sc. Engineering Physics",
+        "edu-msc-desc": "Micro and Nano-systems track, co-developed with STMicroelectronics. Core topics: condensed matter physics, semiconductor device physics, physical modelling & simulation, advanced nano-fabrication, and MEMS integration.",
+        "edu-bsc-title": "B.Sc. Physics Engineering",
+        "edu-bsc-desc": "Focus on quantum mechanics, optics, and material science. Thesis: <em>Fabrication and characterisation of integrated plasmonic structures on an MoS₂ transistor</em>.",
+        "contact-loc-label": "Location",
+        "contact-loc-val": "Milan, Italy",
+        "contact-lang-label": "Languages",
+        "contact-lang-val": "Italian (native) · English C1",
+        "footer-loc": "Milan, Italy",
+        
+        // OVERLAY
+        "overlay-back": "Back",
+        "overlay-img-hint": "Add image paths in the JS data object.",
+        "overlay-links-hint": "Add links in the JS data object.",
+        "overlay-overview": "Overview",
+        "overlay-key-contrib": "Key contributions",
+        "overlay-tech": "Technologies & methods",
+        "overlay-links": "Links & resources"
+      },
+      it: {
+        "nav-about": "Chi sono",
+        "nav-projects": "Progetti",
+        "nav-skills": "Competenze",
+        "nav-education": "Formazione",
+        "nav-contact": "Contatti",
+        "hero-eyebrow": "Ingegneria Fisica · Politecnico di Milano",
+        "hero-title": "Nano-sistemi<br />& Ingegneria<br />Embedded",
+        "hero-desc": "Studente magistrale specializzato in fisica dei dispositivi a materiali 2D, nano-fabbricazione in cleanroom ISO e firmware embedded a bassissimo consumo. A Milano.",
+        "btn-contact": "Contattami",
+        "btn-cv": "Scarica CV",
+        "btn-copy": "Copia email",
+        "about-text": "Lavoro all'intersezione tra la <strong>fisica della materia condensata</strong> e l'<strong>ingegneria embedded</strong> — dalla fabbricazione di transistor a eterostrutture 2D in cleanroom ISO 6, allo sviluppo di firmware a basso consumo per dispositivi indossabili intelligenti.<br /><br />Il mio percorso magistrale al Politecnico di Milano è stato co-sviluppato con <strong>STMicroelectronics</strong>, con particolare attenzione all'estrema miniaturizzazione, alla modellizzazione di dispositivi a stato solido e all'integrazione MEMS avanzata. Mi appassionano i problemi che si collocano al confine tra il mondo fisico e quello digitale.",
+        "section-projects": "Ricerca & Progetti",
+        "date-eyewear": "Feb 2025<br />– Presente",
+        "title-eyewear": "Occhiali Smart Sensoriali",
+        "desc-eyewear": "Sviluppo di firmware STM32U5 (Cortex-M33) per interfacciare uno spettrometro AS7341 e un microfono MEMS per un prototipo di occhiali smart. Consumo ottimizzato tramite acquisizione LPBAM Stop 2.",
+        "title-mos2": "Transistor MoS₂ con Plasmoni",
+        "desc-mos2": "Progettazione di un FET 2D con back-gate in grafene, dielettrico hBN e canale MoS₂. Strutture plasmoniche in Au aggiunte per migliorare la fotorisposta.",
+        "title-echoflow": "EchoFlow — Monitoraggio Traffico",
+        "org-echoflow": "Progetto Accademico",
+        "desc-echoflow": "Progettata una rete distribuita per rilevamento del traffico con Arduino. Implementato filtro di Kalman per riduzione del rumore, con errore di stima della velocità inferiore al 20%.",
+        "skill-nano": "Nano-fabbricazione",
+        "skill-device": "Fisica dei Dispositivi",
+        "skill-embedded": "Sistemi Embedded",
+        "edu-msc-title": "Laurea Magistrale in Ingegneria Fisica",
+        "edu-msc-desc": "Indirizzo Micro e Nano-sistemi, in collaborazione con STMicroelectronics. Argomenti: fisica della materia condensata, dispositivi a semiconduttore, simulazione, nano-fabbricazione e MEMS.",
+        "edu-bsc-title": "Laurea Triennale in Ingegneria Fisica",
+        "edu-bsc-desc": "Focus su meccanica quantistica, ottica e scienza dei materiali. Tesi: <em>Fabbricazione e caratterizzazione di strutture plasmoniche integrate su un transistor in MoS₂</em>.",
+        "contact-loc-label": "Luogo",
+        "contact-loc-val": "Milano, Italia",
+        "contact-lang-label": "Lingue",
+        "contact-lang-val": "Italiano (madrelingua) · Inglese C1",
+        "footer-loc": "Milano, Italia",
+        
+        // OVERLAY
+        "overlay-back": "Indietro",
+        "overlay-img-hint": "Aggiungi percorsi immagine nell'oggetto JS.",
+        "overlay-links-hint": "Aggiungi link nell'oggetto JS.",
+        "overlay-overview": "Panoramica",
+        "overlay-key-contrib": "Contributi principali",
+        "overlay-tech": "Tecnologie e metodi",
+        "overlay-links": "Link e risorse"
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'it' : 'en';
+      document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'IT' : 'EN';
+      updateTranslations();
+      
+      // Se c'è un progetto aperto, ricrea il contenuto per tradurlo
+      if (document.getElementById('overlay').classList.contains('open') && activeProjectId) {
+        document.getElementById('overlay-back-text').textContent = translations[currentLang]["overlay-back"];
+        document.getElementById('overlay-content').innerHTML = buildContent(activeProjectId, projects[activeProjectId]);
+      }
+    }
+
+    function updateTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key];
+        }
+      });
+    }
+
+    /* ── MOBILE MENU ── */
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+    
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+    }
+
     /* ── COPY EMAIL ── */
     function copyEmail() {
       navigator.clipboard.writeText('mattia.rumolo@mail.polimi.it').then(() => {
         const btn = document.getElementById('copy-btn');
-        btn.textContent = 'Copied ✓';
+        btn.textContent = currentLang === 'en' ? 'Copied ✓' : 'Copiato ✓';
         btn.style.color = 'var(--accent)';
         btn.style.borderColor = 'var(--accent)';
         setTimeout(() => {
-          btn.textContent = 'Copy email';
+          btn.textContent = translations[currentLang]['btn-copy'];
           btn.style.color = '';
           btn.style.borderColor = '';
         }, 2000);
       });
     }
 
-    /* ── PROJECT DATA (STATIC) ── */
+    /* ── PROJECT DATA (BILINGUAL) ── */
     const projects = {
       eyewear: {
-        eyebrow: 'EssilorLuxottica Smart Eyewear Lab · Feb 2025 – Present',
-        title: 'Smart Sensory Eyewear',
-        overview: 'Developing STM32U5 (Cortex-M33) firmware for a smart-glasses prototype that fuses light-spectrum and acoustic data in real time. The device uses an AS7341 11-channel spectrometer and a digital MEMS microphone, both acquired via LPBAM in Stop 2 mode to minimise power draw. The embedded C pipeline performs on-chip environmental hazard detection without cloud offload.',
-        highlights: [
-          'STM32U5 ultra-low-power firmware with LPBAM Stop 2 acquisition',
-          'AS7341 11-channel spectrometer integration via I²C',
-          'Digital MEMS microphone + real-time signal processing',
-          'On-device environmental hazard detection algorithms',
-          'PCB design with Altium Designer',
-        ],
+        en: {
+          eyebrow: 'EssilorLuxottica Smart Eyewear Lab · Feb 2025 – Present',
+          title: 'Smart Sensory Eyewear',
+          overview: 'Developing STM32U5 (Cortex-M33) firmware for a smart-glasses prototype that fuses light-spectrum and acoustic data in real time. The device uses an AS7341 11-channel spectrometer and a digital MEMS microphone, both acquired via LPBAM in Stop 2 mode to minimise power draw. The embedded C pipeline performs on-chip environmental hazard detection without cloud offload.',
+          highlights: [
+            'STM32U5 ultra-low-power firmware with LPBAM Stop 2 acquisition',
+            'AS7341 11-channel spectrometer integration via I²C',
+            'Digital MEMS microphone + real-time signal processing',
+            'On-device environmental hazard detection algorithms',
+            'PCB design with Altium Designer',
+          ]
+        },
+        it: {
+          eyebrow: 'EssilorLuxottica Smart Eyewear Lab · Feb 2025 – Presente',
+          title: 'Occhiali Smart Sensoriali',
+          overview: 'Sviluppo di firmware STM32U5 (Cortex-M33) per un prototipo di occhiali smart che fonde dati acustici e dello spettro luminoso in tempo reale. Il dispositivo utilizza uno spettrometro AS7341 a 11 canali e un microfono MEMS digitale, acquisiti tramite LPBAM in modalità Stop 2 per ridurre al minimo il consumo. La pipeline in C embedded esegue il rilevamento ambientale direttamente su chip senza cloud.',
+          highlights: [
+            'Firmware STM32U5 a bassissimo consumo con acquisizione LPBAM Stop 2',
+            'Integrazione dello spettrometro AS7341 a 11 canali tramite I²C',
+            'Microfono MEMS digitale + elaborazione del segnale in tempo reale',
+            'Algoritmi on-device per il rilevamento di pericoli ambientali',
+            'Progettazione PCB con Altium Designer',
+          ]
+        },
         tags: ['STM32U5', 'Cortex-M33', 'Embedded C', 'LPBAM', 'AS7341', 'MEMS', 'PCB Design'],
         images: [
           'https://images.unsplash.com/photo-1572635196237-14b3f281501f?auto=format&fit=crop&q=80&w=800'
@@ -505,50 +661,84 @@
         links: [],
       },
       mos2: {
-        eyebrow: 'L-NESS & PoliFab, Politecnico di Milano · May – Sept 2024',
-        title: 'Plasmon-Enhanced MoS₂ Transistor',
-        overview: 'B.Sc. thesis project focused on the end-to-end nano-fabrication and optical characterisation of a 2D heterostructure field-effect transistor. The device stack consists of a graphene back-gate, hexagonal boron nitride (hBN) dielectric, and monolayer MoS₂ channel. Gold plasmonic nanostructures were patterned on top to enhance photoresponsivity through localised surface-plasmon resonance.',
-        highlights: [
-          'Full nano-fabrication workflow in ISO 6 cleanroom',
-          'Electron Beam Lithography (EBL) with Raith Voyager',
-          'Reactive Ion Etching (RIE) and e-beam deposition',
-          '2D heterostructure assembly: graphene / hBN / MoS₂',
-          'Au plasmonic nanostructure integration',
-          'Electrical & optical characterisation of FET response',
-        ],
+        en: {
+          eyebrow: 'L-NESS & PoliFab, Politecnico di Milano · May – Sept 2024',
+          title: 'Plasmon-Enhanced MoS₂ Transistor',
+          overview: 'B.Sc. thesis project focused on the end-to-end nano-fabrication and optical characterisation of a 2D heterostructure field-effect transistor. The device stack consists of a graphene back-gate, hexagonal boron nitride (hBN) dielectric, and monolayer MoS₂ channel. Gold plasmonic nanostructures were patterned on top to enhance photoresponsivity through localised surface-plasmon resonance.',
+          highlights: [
+            'Full nano-fabrication workflow in ISO 6 cleanroom',
+            'Electron Beam Lithography (EBL) with Raith Voyager',
+            'Reactive Ion Etching (RIE) and e-beam deposition',
+            '2D heterostructure assembly: graphene / hBN / MoS₂',
+            'Au plasmonic nanostructure integration',
+            'Electrical & optical characterisation of FET response',
+          ]
+        },
+        it: {
+          eyebrow: 'L-NESS & PoliFab, Politecnico di Milano · Maggio – Sett 2024',
+          title: 'Transistor MoS₂ Potenziato da Plasmoni',
+          overview: 'Progetto di tesi triennale incentrato sulla nano-fabbricazione end-to-end e la caratterizzazione ottica di un FET a eterostruttura 2D. Lo stack del dispositivo è composto da un back-gate in grafene, dielettrico in nitruro di boro esagonale (hBN) e canale in MoS₂ monostrato. Nanostrutture plasmoniche in oro sono state posizionate sopra il dispositivo per migliorare la fotorisposta tramite risonanza plasmonica di superficie localizzata.',
+          highlights: [
+            'Flusso di nano-fabbricazione completo in cleanroom ISO 6',
+            'Litografia a fascio elettronico (EBL) con Raith Voyager',
+            'Reactive Ion Etching (RIE) e deposizione a fascio elettronico',
+            'Assemblaggio di eterostrutture 2D: grafene / hBN / MoS₂',
+            'Integrazione di nanostrutture plasmoniche in Au',
+            'Caratterizzazione elettrica e ottica della risposta del FET',
+          ]
+        },
         tags: ['EBL', 'RIE', 'MoS₂', 'hBN', 'Graphene', 'Plasmonics', 'FET', 'ISO 6 Cleanroom'],
         images: [],
         links: [],
       },
       echoflow: {
-        eyebrow: 'Academic Project · Sept 2024 – Jan 2025',
-        title: 'EchoFlow — Ultrasonic Traffic Monitor',
-        overview: 'Designed and built a distributed traffic-sensing network using Arduino microcontrollers and HC-SR04 ultrasonic sensors. The system estimates vehicle velocity from time-of-flight measurements across two sensor nodes. A scalar Kalman filter was implemented to suppress environmental noise, achieving a velocity estimation error below 20%.',
-        highlights: [
-          'Distributed sensor network with multiple Arduino nodes',
-          'Ultrasonic time-of-flight velocity estimation',
-          'Scalar Kalman filter for noise suppression',
-          'Velocity estimation error < 20%',
-          'Serial data logging and post-processing in Python',
-        ],
+        en: {
+          eyebrow: 'Academic Project · Sept 2024 – Jan 2025',
+          title: 'EchoFlow — Ultrasonic Traffic Monitor',
+          overview: 'Designed and built a distributed traffic-sensing network using Arduino microcontrollers and HC-SR04 ultrasonic sensors. The system estimates vehicle velocity from time-of-flight measurements across two sensor nodes. A scalar Kalman filter was implemented to suppress environmental noise, achieving a velocity estimation error below 20%.',
+          highlights: [
+            'Distributed sensor network with multiple Arduino nodes',
+            'Ultrasonic time-of-flight velocity estimation',
+            'Scalar Kalman filter for noise suppression',
+            'Velocity estimation error < 20%',
+            'Serial data logging and post-processing in Python',
+          ]
+        },
+        it: {
+          eyebrow: 'Progetto Accademico · Sett 2024 – Gen 2025',
+          title: 'EchoFlow — Monitoraggio Traffico a Ultrasuoni',
+          overview: 'Rete di sensori distribuita per il traffico progettata utilizzando microcontrollori Arduino e sensori a ultrasuoni HC-SR04. Il sistema stima la velocità dei veicoli dalle misurazioni del tempo di volo attraverso due nodi sensore. È stato implementato un filtro di Kalman scalare per sopprimere il rumore ambientale, ottenendo un errore di stima della velocità inferiore al 20%.',
+          highlights: [
+            'Rete di sensori distribuita con più nodi Arduino',
+            'Stima della velocità tramite tempo di volo a ultrasuoni',
+            'Filtro di Kalman scalare per la soppressione del rumore',
+            'Errore di stima della velocità < 20%',
+            'Registrazione dati seriali e post-elaborazione in Python',
+          ]
+        },
         tags: ['Arduino', 'Kalman Filter', 'Signal Processing', 'Python', 'Sensor Fusion'],
         images: [],
         links: [],
       },
     };
 
+    let activeProjectId = null;
+
     /* ── OPEN / CLOSE ── */
     function openProject(id) {
       const p = projects[id];
-      if (!p) return; // Controllo di sicurezza
+      if (!p) return;
       
-      document.getElementById('overlay-breadcrumb').textContent = p.title;
+      activeProjectId = id;
+      document.getElementById('overlay-back-text').textContent = translations[currentLang]["overlay-back"];
+      document.getElementById('overlay-breadcrumb').textContent = p[currentLang].title;
       document.getElementById('overlay-content').innerHTML = buildContent(id, p);
       document.getElementById('overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
 
     function closeProject() {
+      activeProjectId = null;
       document.getElementById('overlay').classList.remove('open');
       document.body.style.overflow = '';
     }
@@ -557,7 +747,9 @@
 
     /* ── BUILD HTML ── */
     function buildContent(id, p) {
-      const highlights = p.highlights.map(h =>
+      const data = p[currentLang];
+      
+      const highlights = data.highlights.map(h =>
         `<li style="padding:4px 0;color:var(--fg-muted);font-size:14px;">— ${h}</li>`
       ).join('');
 
@@ -571,31 +763,31 @@
           </div>
         `).join('');
       } else {
-        photosHtml = `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">Add image paths in the JS data object.</span>`;
+        photosHtml = `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">${translations[currentLang]["overlay-img-hint"]}</span>`;
       }
 
       const linksHtml = p.links && p.links.length
         ? p.links.map(l => `<a href="${l.url}" target="_blank" class="link-chip">↗ ${l.label}</a>`).join('')
-        : `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">Add links in the JS data object.</span>`;
+        : `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">${translations[currentLang]["overlay-links-hint"]}</span>`;
 
       return `
-        <p class="overlay-eyebrow">${p.eyebrow}</p>
-        <h1 class="overlay-title">${p.title}</h1>
+        <p class="overlay-eyebrow">${data.eyebrow}</p>
+        <h1 class="overlay-title">${data.title}</h1>
         <div class="gallery">${photosHtml}</div>
         <div class="content-block">
-          <p class="content-block-label">Overview</p>
-          <p>${p.overview}</p>
+          <p class="content-block-label">${translations[currentLang]["overlay-overview"]}</p>
+          <p>${data.overview}</p>
         </div>
         <div class="content-block">
-          <p class="content-block-label">Key contributions</p>
-          <ul style="list-style:none;">${highlights}</ul>
+          <p class="content-block-label">${translations[currentLang]["overlay-key-contrib"]}</p>
+          <ul style="list-style:none; padding:0; margin:0;">${highlights}</ul>
         </div>
         <div class="content-block">
-          <p class="content-block-label">Technologies & methods</p>
+          <p class="content-block-label">${translations[currentLang]["overlay-tech"]}</p>
           <div class="tag-row">${tags}</div>
         </div>
         <div class="content-block">
-          <p class="content-block-label">Links & resources</p>
+          <p class="content-block-label">${translations[currentLang]["overlay-links"]}</p>
           <div class="link-row">${linksHtml}</div>
         </div>`;
     }
