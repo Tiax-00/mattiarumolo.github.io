@@ -1,629 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <title>Mattia Rumolo — Engineering Physics</title>
+  <meta name="description" content="Portfolio of Mattia Rumolo, M.Sc. candidate in Engineering Physics at Politecnico di Milano specializing in nano-systems and embedded firmware." />
+  <meta property="og:title" content="Mattia Rumolo — Engineering Physics" />
+  <meta property="og:description" content="M.Sc. candidate in Engineering Physics specializing in 2D material device physics and ultra-low-power embedded firmware." />
+  <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!DOCTYPE html>\
-<html lang="en">\
-<head>\
-  <meta charset="UTF-8" />\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
-  \
-  <!-- SEO & Social Sharing Meta Tags -->\
-  <title>Mattia Rumolo \'97 Engineering Physics</title>\
-  <meta name="description" content="Portfolio of Mattia Rumolo, M.Sc. candidate in Engineering Physics at Politecnico di Milano specializing in nano-systems and embedded firmware." />\
-  <meta property="og:title" content="Mattia Rumolo \'97 Engineering Physics" />\
-  <meta property="og:description" content="M.Sc. candidate in Engineering Physics specializing in 2D material device physics and ultra-low-power embedded firmware." />\
-  <meta property="og:type" content="website" />\
-\
-  <link rel="preconnect" href="https://fonts.googleapis.com" />\
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />\
-  <style>\
-    *, *::before, *::after \{ box-sizing: border-box; margin: 0; padding: 0; \}\
-\
-    :root \{\
-      --bg: #f7f6f2;\
-      --fg: #1a1916;\
-      --fg-muted: #6b6960;\
-      --fg-faint: #b0aea5;\
-      --accent: #5b3fcf;\
-      --accent-light: #ede9fb;\
-      --accent-hover: #4a30b0;\
-      --border: #dddbd4;\
-      --surface: #ffffff;\
-      --radius-sm: 8px;\
-      --radius-md: 12px;\
-      --radius-lg: 16px;\
-    \}\
-\
-    html \{ scroll-behavior: smooth; \}\
-\
-    body \{\
-      font-family: 'DM Sans', sans-serif;\
-      background: var(--bg);\
-      color: var(--fg);\
-      font-size: 15px;\
-      line-height: 1.7;\
-      font-weight: 400;\
-      overflow-x: hidden;\
-    \}\
-\
-    .page \{ max-width: 720px; margin: 0 auto; padding: 0 2rem; \}\
-\
-    /* NAV */\
-    nav \{\
-      position: fixed; top: 0; left: 0; right: 0;\
-      z-index: 100; background: var(--bg);\
-      border-bottom: 1px solid var(--border);\
-    \}\
-    nav .inner \{\
-      max-width: 720px; margin: 0 auto; padding: 0 2rem;\
-      height: 52px; display: flex; align-items: center; justify-content: space-between;\
-    \}\
-    nav .logo \{\
-      font-family: 'DM Serif Display', serif; font-size: 17px;\
-      color: var(--fg); text-decoration: none; letter-spacing: -0.02em;\
-    \}\
-    nav ul \{ list-style: none; display: flex; gap: 2rem; \}\
-    nav ul a \{\
-      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;\
-      text-decoration: none; color: var(--fg-muted); transition: color 0.2s;\
-    \}\
-    nav ul a:hover \{ color: var(--accent); \}\
-\
-    /* HERO */\
-    .hero \{ padding-top: 140px; padding-bottom: 80px; border-bottom: 1px solid var(--border); \}\
-    .hero-eyebrow \{\
-      font-size: 11px; font-weight: 500; letter-spacing: 0.14em;\
-      text-transform: uppercase; color: var(--fg); margin-bottom: 1.5rem;\
-    \}\
-    .hero h1 \{\
-      font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(42px, 7vw, 68px);\
-      line-height: 1.05; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 1.5rem;\
-    \}\
-    .hero-desc \{ max-width: 480px; color: var(--fg-muted); font-size: 15px; line-height: 1.85; margin-bottom: 2.5rem; font-weight: 400; \}\
-    .hero-links \{ display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; \}\
-    .btn-primary \{\
-      display: inline-block; padding: 10px 24px; background: var(--accent); color: #fff;\
-      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;\
-      text-decoration: none; border-radius: var(--radius-sm); transition: background 0.2s, color 0.2s, border-color 0.2s;\
-    \}\
-    .btn-primary:hover \{ background: var(--accent-hover); \}\
-    \
-    .btn-secondary \{\
-      background: var(--surface); color: var(--fg); border: 1px solid var(--border);\
-    \}\
-    .btn-secondary:hover \{\
-      background: var(--bg); border-color: var(--accent); color: var(--accent);\
-    \}\
-\
-    .hero-links a.link-plain, .hero-links button.link-plain \{\
-      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;\
-      color: var(--fg-muted); text-decoration: none; border: none; background: none;\
-      border-bottom: 1px solid var(--border); padding-bottom: 1px;\
-      cursor: pointer; transition: color 0.2s, border-color 0.2s;\
-    \}\
-    .hero-links a.link-plain:hover, .hero-links button.link-plain:hover \{ color: var(--accent); border-color: var(--accent); \}\
-\
-    /* SECTIONS */\
-    section \{ padding: 72px 0; border-bottom: 1px solid var(--border); \}\
-    .section-label \{\
-      font-size: 11px; font-weight: 500; letter-spacing: 0.14em;\
-      text-transform: uppercase; color: var(--fg); margin-bottom: 3rem;\
-    \}\
-\
-    /* ABOUT */\
-    .about-text \{ font-size: 16px; line-height: 1.85; color: var(--fg-muted); max-width: 600px; font-weight: 400; \}\
-    .about-text strong \{ color: var(--fg); font-weight: 500; \}\
-\
-    /* TIMELINE */\
-    .timeline \{ display: flex; flex-direction: column; \}\
-    .timeline-item \{\
-      display: grid; grid-template-columns: 120px 1fr; gap: 0 2rem;\
-      padding: 2rem 0; border-top: 1px solid var(--border);\
-      cursor: pointer;\
-    \}\
-    .timeline-item:last-child \{ border-bottom: 1px solid var(--border); \}\
-    .timeline-item:hover .timeline-body h3 \{ color: var(--accent-hover); \}\
-    .timeline-date \{\
-      font-size: 12px; font-weight: 500; letter-spacing: 0.02em;\
-      color: var(--fg-muted); padding-top: 4px; line-height: 1.6;\
-    \}\
-    .timeline-body h3 \{\
-      font-family: 'DM Serif Display', serif; font-size: 19px; font-weight: 400;\
-      letter-spacing: -0.01em; color: var(--accent); margin-bottom: 4px; transition: color 0.2s;\
-    \}\
-    .timeline-body .org \{\
-      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;\
-      color: var(--fg); margin-bottom: 10px;\
-    \}\
-    .timeline-body p \{ font-size: 14px; color: var(--fg-muted); line-height: 1.75; font-weight: 400; \}\
-    .timeline-arrow \{\
-      display: inline-block; margin-left: 8px; font-size: 13px;\
-      color: var(--fg-faint); transition: transform 0.2s, color 0.2s;\
-    \}\
-    .timeline-item:hover .timeline-arrow \{ transform: translateX(4px); color: var(--accent); \}\
-\
-    /* SKILLS */\
-    .skills-grid \{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; \}\
-    .skill-block \{\
-      background: var(--surface); padding: 1.5rem;\
-      border: 1px solid var(--border); border-radius: var(--radius-md);\
-    \}\
-    .skill-block h4 \{\
-      font-size: 10px; font-weight: 500; letter-spacing: 0.14em;\
-      text-transform: uppercase; color: var(--fg); margin-bottom: 14px;\
-    \}\
-    .skill-block ul \{ list-style: none; display: flex; flex-wrap: wrap; gap: 6px; \}\
-    .skill-block ul li \{\
-      font-size: 12px; font-weight: 400; color: var(--fg-muted); background: var(--bg);\
-      padding: 4px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm);\
-      transition: background 0.15s, color 0.15s, border-color 0.15s;\
-    \}\
-    .skill-block ul li:hover \{ background: var(--accent-light); color: var(--accent); border-color: var(--accent); \}\
-\
-    /* EDUCATION */\
-    .edu-item \{\
-      padding: 2rem 0; border-top: 1px solid var(--border);\
-      display: grid; grid-template-columns: 120px 1fr; gap: 0 2rem;\
-    \}\
-    .edu-item:last-child \{ border-bottom: 1px solid var(--border); \}\
-    .edu-year \{ font-size: 12px; font-weight: 500; color: var(--fg-muted); padding-top: 4px; letter-spacing: 0.02em; \}\
-    .edu-body h3 \{\
-      font-family: 'DM Serif Display', serif; font-size: 19px; font-weight: 400;\
-      letter-spacing: -0.01em; color: var(--accent); margin-bottom: 4px;\
-    \}\
-    .edu-body .inst \{ font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: var(--fg); margin-bottom: 10px; \}\
-    .edu-body p \{ font-size: 14px; color: var(--fg-muted); line-height: 1.75; font-weight: 400; \}\
-\
-    /* CONTACT */\
-    .contact-grid \{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; \}\
-    .contact-item \{\
-      background: var(--surface); border: 1px solid var(--border); padding: 1.5rem;\
-      text-decoration: none; display: flex; flex-direction: column; gap: 6px;\
-      border-radius: var(--radius-md); transition: background 0.2s, border-color 0.2s;\
-    \}\
-    .contact-item:hover \{ background: var(--accent); border-color: var(--accent); \}\
-    .contact-item:hover .contact-label,\
-    .contact-item:hover .contact-value \{ color: #fff; \}\
-    .contact-label \{\
-      font-size: 10px; font-weight: 500; letter-spacing: 0.14em;\
-      text-transform: uppercase; color: var(--fg-muted); transition: color 0.2s;\
-    \}\
-    .contact-value \{ font-size: 14px; font-weight: 400; color: var(--fg); transition: color 0.2s; \}\
-\
-    /* FOOTER */\
-    footer \{ padding: 3rem 0; display: flex; justify-content: space-between; align-items: center; \}\
-    footer p \{ font-size: 11px; font-weight: 400; color: var(--fg-faint); letter-spacing: 0.06em; \}\
-\
-    /* RESPONSIVE */\
-    @media (max-width: 560px) \{\
-      .timeline-item, .edu-item \{ grid-template-columns: 1fr; gap: 4px; \}\
-      .skills-grid, .contact-grid \{ grid-template-columns: 1fr; \}\
-      nav ul \{ gap: 1.2rem; \}\
-    \}\
-\
-    /* \uc0\u9552 \u9552  PROJECT OVERLAY \u9552 \u9552  */\
-    .overlay \{\
-      position: fixed; inset: 0; z-index: 200;\
-      background: var(--bg); overflow-y: auto;\
-      transform: translateY(100%);\
-      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);\
-      will-change: transform;\
-    \}\
-    .overlay.open \{ transform: translateY(0); \}\
-\
-    .overlay-nav \{\
-      position: sticky; top: 0; background: var(--bg);\
-      border-bottom: 1px solid var(--border); z-index: 10;\
-      display: flex; align-items: center; justify-content: space-between;\
-      padding: 0 2rem; height: 52px;\
-    \}\
-    .overlay-back \{\
-      display: flex; align-items: center; gap: 8px;\
-      font-family: 'DM Mono', monospace; font-size: 11px;\
-      letter-spacing: 0.1em; text-transform: uppercase;\
-      color: var(--fg-muted); cursor: pointer;\
-      border: none; background: none; transition: color 0.2s;\
-    \}\
-    .overlay-back:hover \{ color: var(--accent); \}\
-    .overlay-back svg \{ width: 14px; height: 14px; \}\
-    .overlay-breadcrumb \{ font-family: 'DM Mono', monospace; font-size: 11px; color: var(--fg-faint); letter-spacing: 0.06em; \}\
-\
-    .overlay-content \{ max-width: 720px; margin: 0 auto; padding: 3rem 2rem 6rem; \}\
-    .overlay-eyebrow \{\
-      font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300;\
-      letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 1rem;\
-    \}\
-    .overlay-title \{\
-      font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 48px);\
-      line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 2.5rem;\
-    \}\
-\
-    /* GALLERY */\
-    .gallery \{ display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 3rem; \}\
-    .gallery-slot \{\
-      aspect-ratio: 4/3; background: var(--surface);\
-      border: 1px solid var(--border); border-radius: var(--radius-md);\
-      display: flex; flex-direction: column; align-items: center; justify-content: center;\
-      cursor: pointer; transition: border-color 0.2s, opacity 0.2s;\
-      overflow: hidden; position: relative;\
-    \}\
-    .gallery-slot:hover \{ border-color: var(--accent); opacity: 0.9; \}\
-    .gallery-slot img \{\
-      position: absolute; inset: 0; width: 100%; height: 100%;\
-      object-fit: cover; border-radius: var(--radius-md);\
-    \}\
-\
-    /* CONTENT BLOCKS */\
-    .content-block \{ margin-bottom: 2.5rem; \}\
-    .content-block-label \{\
-      font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300;\
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-faint);\
-      margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);\
-    \}\
-    .content-block p \{ font-size: 15px; color: var(--fg-muted); line-height: 1.8; \}\
-\
-    /* TAGS */\
-    .tag-row \{ display: flex; flex-wrap: wrap; gap: 6px; \}\
-    .tag \{\
-      font-size: 12px; color: var(--accent); background: var(--accent-light);\
-      padding: 4px 12px; border-radius: var(--radius-sm); border: 1px solid var(--accent);\
-    \}\
-\
-    /* LINK CHIPS */\
-    .link-row \{ display: flex; flex-wrap: wrap; gap: 10px; \}\
-    .link-chip \{\
-      display: inline-flex; align-items: center; gap: 6px;\
-      font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;\
-      color: var(--fg-muted); text-decoration: none;\
-      border: 1px solid var(--border); border-radius: var(--radius-sm);\
-      padding: 6px 14px; transition: border-color 0.2s, color 0.2s;\
-    \}\
-    .link-chip:hover \{ border-color: var(--accent); color: var(--accent); \}\
-\
-    /* LIGHTBOX */\
-    .lightbox \{\
-      position: fixed; inset: 0; z-index: 300;\
-      background: rgba(20,18,14,0.92);\
-      display: flex; align-items: center; justify-content: center;\
-      opacity: 0; pointer-events: none; transition: opacity 0.25s;\
-    \}\
-    .lightbox.open \{ opacity: 1; pointer-events: all; \}\
-    .lightbox img \{ max-width: 90vw; max-height: 88vh; border-radius: var(--radius-md); object-fit: contain; \}\
-    .lightbox-close \{\
-      position: absolute; top: 1.5rem; right: 1.5rem;\
-      background: none; border: none; color: #fff; cursor: pointer; opacity: 0.7; transition: opacity 0.2s;\
-    \}\
-    .lightbox-close:hover \{ opacity: 1; \}\
-    .lightbox-close svg \{ width: 28px; height: 28px; \}\
-  </style>\
-</head>\
-<body>\
-\
-  <nav>\
-    <div class="inner">\
-      <a href="#" class="logo">Mattia Rumolo</a>\
-      <ul>\
-        <li><a href="#about">About</a></li>\
-        <li><a href="#projects">Projects</a></li>\
-        <li><a href="#skills">Skills</a></li>\
-        <li><a href="#education">Education</a></li>\
-        <li><a href="#contact">Contact</a></li>\
-      </ul>\
-    </div>\
-  </nav>\
-\
-  <div class="page">\
-\
-    <header class="hero">\
-      <p class="hero-eyebrow">Engineering Physics \'b7 Politecnico di Milano</p>\
-      <h1>Nano-systems<br />& Embedded<br />Engineering</h1>\
-      <p class="hero-desc">M.Sc. candidate specialising in 2D material device physics, ISO-classified cleanroom nano-fabrication, and ultra-low-power embedded firmware. Based in Milan.</p>\
-      <div class="hero-links">\
-        <a href="mailto:mattia.rumolo@mail.polimi.it" class="btn-primary">Get in touch</a>\
-        <a href="assets/Mattia_Rumolo_Resume_Definitivo.pdf" download="Mattia_Rumolo_CV.pdf" class="btn-primary btn-secondary">Download CV</a>\
-        <button class="link-plain" id="copy-btn" onclick="copyEmail()">Copy email</button>\
-        <a href="https://linkedin.com/in/mattia-rumolo" target="_blank" class="link-plain">LinkedIn \uc0\u8599 </a>\
-      </div>\
-    </header>\
-\
-    <section id="about">\
-      <p class="section-label">About</p>\
-      <p class="about-text">\
-        I work at the intersection of <strong>condensed matter physics</strong> and <strong>embedded engineering</strong> \'97 from fabricating 2D heterostructure transistors in ISO 6 cleanrooms to writing low-power firmware for smart wearable devices.<br /><br />\
-        My M.Sc. curriculum at Politecnico di Milano was co-developed with <strong>STMicroelectronics</strong>, with a focus on extreme miniaturisation, solid-state device modelling, and advanced MEMS integration. I enjoy problems that live at the boundary between the physical world and the digital one.\
-      </p>\
-    </section>\
-\
-    <section id="projects">\
-      <p class="section-label">Research & Projects</p>\
-      <div class="timeline">\
-\
-        <div class="timeline-item" onclick="openProject('eyewear')">\
-          <div class="timeline-date">Feb 2025<br />\'96 Present</div>\
-          <div class="timeline-body">\
-            <h3>Smart Sensory Eyewear <span class="timeline-arrow">\uc0\u8594 </span></h3>\
-            <div class="org">EssilorLuxottica Smart Eyewear Lab</div>\
-            <p>Developing STM32U5 firmware (Cortex-M33) that interfaces an AS7341 spectrometer and a digital MEMS microphone for a smart-glasses prototype. Power optimised through LPBAM Stop 2 mode acquisition.</p>\
-          </div>\
-        </div>\
-\
-        <div class="timeline-item" onclick="openProject('keyboard')">\
-          <div class="timeline-date">Spring 2026</div>\
-          <div class="timeline-body">\
-            <h3>Custom Mechanical Keyboard <span class="timeline-arrow">\uc0\u8594 </span></h3>\
-            <div class="org">Hardware Prototyping</div>\
-            <p>Designed and assembled a mechanical keyboard from scratch, including custom PCB design, 3D-printed housing (PETG), and embedded firmware configuration.</p>\
-          </div>\
-        </div>\
-\
-        <div class="timeline-item" onclick="openProject('mos2')">\
-          <div class="timeline-date">May 2024<br />\'96 Sept 2024</div>\
-          <div class="timeline-body">\
-            <h3>Plasmon-Enhanced MoS\uc0\u8322  Transistor <span class="timeline-arrow">\u8594 </span></h3>\
-            <div class="org">L-NESS & PoliFab \'97 B.Sc. Thesis</div>\
-            <p>Engineered a 2D heterostructure FET with a graphene back-gate, hBN dielectric, and MoS\uc0\u8322  channel. Added Au plasmonic nanostructures to enhance light responsivity.</p>\
-          </div>\
-        </div>\
-\
-        <div class="timeline-item" onclick="openProject('echoflow')">\
-          <div class="timeline-date">Sept 2024<br />\'96 Jan 2025</div>\
-          <div class="timeline-body">\
-            <h3>EchoFlow \'97 Ultrasonic Traffic Monitor <span class="timeline-arrow">\uc0\u8594 </span></h3>\
-            <div class="org">Academic Project</div>\
-            <p>Designed a distributed traffic-sensing network with Arduino and ultrasonic sensors. Implemented scalar Kalman filtering for noise reduction, achieving velocity estimation error below 20%.</p>\
-          </div>\
-        </div>\
-\
-      </div>\
-    </section>\
-\
-    <section id="skills">\
-      <p class="section-label">Technical Skills</p>\
-      <div class="skills-grid">\
-        <div class="skill-block">\
-          <h4>Nano-fabrication</h4>\
-          <ul><li>EBL \'b7 Raith Voyager</li><li>RIE</li><li>PVD \'b7 ALD</li><li>Spin Coating</li><li>ISO 6/8 Cleanroom</li></ul>\
-        </div>\
-        <div class="skill-block">\
-          <h4>Device Physics</h4>\
-          <ul><li>Solid-State Physics</li><li>2D Materials (MoS\uc0\u8322 , hBN, Graphene)</li><li>FET Architecture</li><li>MEMS Design</li><li>Quantum Mechanics</li></ul>\
-        </div>\
-        <div class="skill-block">\
-          <h4>Embedded Systems</h4>\
-          <ul><li>STM32U5 \'b7 Cortex-M33</li><li>Embedded C</li><li>LPBAM</li><li>PCB Design</li><li>Arduino</li><li>3D Printing (PETG)</li></ul>\
-        </div>\
-        <div class="skill-block">\
-          <h4>Software</h4>\
-          <ul><li>Python \'b7 MATLAB</li><li>C</li><li>Altium Designer</li><li>CubeMX</li><li>Git \'b7 LaTeX</li></ul>\
-        </div>\
-      </div>\
-    </section>\
-\
-    <section id="education">\
-      <p class="section-label">Education</p>\
-      <div class="edu-item">\
-        <div class="edu-year">2025 \'96 2027</div>\
-        <div class="edu-body">\
-          <h3>M.Sc. Engineering Physics</h3>\
-          <div class="inst">Politecnico di Milano</div>\
-          <p>Micro and Nano-systems track, co-developed with STMicroelectronics. Core topics: condensed matter physics, semiconductor device physics, physical modelling & simulation, advanced nano-fabrication, and MEMS integration.</p>\
-        </div>\
-      </div>\
-      <div class="edu-item">\
-        <div class="edu-year">2022 \'96 2025</div>\
-        <div class="edu-body">\
-          <h3>B.Sc. Physics Engineering</h3>\
-          <div class="inst">Politecnico di Milano</div>\
-          <p>Focus on quantum mechanics, optics, and material science. Thesis: <em>Fabrication and characterisation of integrated plasmonic structures on an MoS\uc0\u8322  transistor</em>.</p>\
-        </div>\
-      </div>\
-    </section>\
-\
-    <section id="contact">\
-      <p class="section-label">Contact</p>\
-      <div class="contact-grid">\
-        <a href="mailto:mattia.rumolo@mail.polimi.it" class="contact-item">\
-          <span class="contact-label">Email</span>\
-          <span class="contact-value">mattia.rumolo@mail.polimi.it</span>\
-        </a>\
-        <a href="https://linkedin.com/in/mattia-rumolo" target="_blank" class="contact-item">\
-          <span class="contact-label">LinkedIn</span>\
-          <span class="contact-value">linkedin.com/in/mattia-rumolo</span>\
-        </a>\
-        <a href="#" class="contact-item">\
-          <span class="contact-label">Location</span>\
-          <span class="contact-value">Milan, Italy</span>\
-        </a>\
-        <a href="#" class="contact-item">\
-          <span class="contact-label">Languages</span>\
-          <span class="contact-value">Italian (native) \'b7 English C1</span>\
-        </a>\
-      </div>\
-    </section>\
-\
-    <footer>\
-      <p>\'a9 2026 Mattia Rumolo</p>\
-      <p>Milan, Italy</p>\
-    </footer>\
-  </div>\
-\
-  <!-- PROJECT OVERLAY -->\
-  <div class="overlay" id="overlay" role="dialog" aria-modal="true">\
-    <div class="overlay-nav">\
-      <button class="overlay-back" onclick="closeProject()">\
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">\
-          <path d="M19 12H5M12 5l-7 7 7 7"/>\
-        </svg>\
-        Back\
-      </button>\
-      <span class="overlay-breadcrumb" id="overlay-breadcrumb"></span>\
-    </div>\
-    <div class="overlay-content" id="overlay-content"></div>\
-  </div>\
-\
-  <!-- LIGHTBOX -->\
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">\
-    <button class="lightbox-close" onclick="closeLightbox()">\
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">\
-        <path d="M18 6L6 18M6 6l12 12"/>\
-      </svg>\
-    </button>\
-    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />\
-  </div>\
-\
-  <script>\
-    /* \uc0\u9472 \u9472  COPY EMAIL \u9472 \u9472  */\
-    function copyEmail() \{\
-      navigator.clipboard.writeText('mattia.rumolo@mail.polimi.it').then(() => \{\
-        const btn = document.getElementById('copy-btn');\
-        btn.textContent = 'Copied \uc0\u10003 ';\
-        btn.style.color = 'var(--accent)';\
-        btn.style.borderColor = 'var(--accent)';\
-        setTimeout(() => \{\
-          btn.textContent = 'Copy email';\
-          btn.style.color = '';\
-          btn.style.borderColor = '';\
-        \}, 2000);\
-      \});\
-    \}\
-\
-    /* \uc0\u9472 \u9472  PROJECT DATA (STATIC) \u9472 \u9472  */\
-    const projects = \{\
-      eyewear: \{\
-        eyebrow: 'EssilorLuxottica Smart Eyewear Lab \'b7 Feb 2025 \'96 Present',\
-        title: 'Smart Sensory Eyewear',\
-        overview: 'Developing STM32U5 (Cortex-M33) firmware for a smart-glasses prototype that fuses light-spectrum and acoustic data in real time. The device uses an AS7341 11-channel spectrometer and a digital MEMS microphone, both acquired via LPBAM in Stop 2 mode to minimise power draw. The embedded C pipeline performs on-chip environmental hazard detection without cloud offload.',\
-        highlights: [\
-          'STM32U5 ultra-low-power firmware with LPBAM Stop 2 acquisition',\
-          'AS7341 11-channel spectrometer integration via I\'b2C',\
-          'Digital MEMS microphone + real-time signal processing',\
-          'On-device environmental hazard detection algorithms',\
-          'PCB design with Altium Designer',\
-        ],\
-        tags: ['STM32U5', 'Cortex-M33', 'Embedded C', 'LPBAM', 'AS7341', 'MEMS', 'PCB Design'],\
-        images: [\
-          'https://images.unsplash.com/photo-1572635196237-14b3f281501f?auto=format&fit=crop&q=80&w=800' // Placeholder aggiunto per il test visivo\
-        ],\
-        links: [],\
-      \},\
-      keyboard: \{\
-        eyebrow: 'Personal Hardware Project \'b7 Spring 2026',\
-        title: 'Custom Mechanical Keyboard',\
-        overview: 'Designed and assembled a mechanical keyboard completely from scratch. The project involved routing a custom PCB for the switch matrix and microcontroller, and designing an industrial-style housing printed in PETG to ensure structural integrity. This project bridges the gap between digital electronic design and physical manufacturing.',\
-        highlights: [\
-          'Custom PCB design and routing for the switch matrix',\
-          'Sourcing and integration of specialized keycap components',\
-          '3D modeling and printing of the housing using PETG',\
-          'Firmware configuration for custom keymaps',\
-        ],\
-        tags: ['PCB Design', '3D Printing', 'PETG', 'Hardware Prototyping', 'CAD'],\
-        images: [],\
-        links: [],\
-      \},\
-      mos2: \{\
-        eyebrow: 'L-NESS & PoliFab, Politecnico di Milano \'b7 May \'96 Sept 2024',\
-        title: 'Plasmon-Enhanced MoS\uc0\u8322  Transistor',\
-        overview: 'B.Sc. thesis project focused on the end-to-end nano-fabrication and optical characterisation of a 2D heterostructure field-effect transistor. The device stack consists of a graphene back-gate, hexagonal boron nitride (hBN) dielectric, and monolayer MoS\uc0\u8322  channel. Gold plasmonic nanostructures were patterned on top to enhance photoresponsivity through localised surface-plasmon resonance.',\
-        highlights: [\
-          'Full nano-fabrication workflow in ISO 6 cleanroom',\
-          'Electron Beam Lithography (EBL) with Raith Voyager',\
-          'Reactive Ion Etching (RIE) and e-beam deposition',\
-          '2D heterostructure assembly: graphene / hBN / MoS\uc0\u8322 ',\
-          'Au plasmonic nanostructure integration',\
-          'Electrical & optical characterisation of FET response',\
-        ],\
-        tags: ['EBL', 'RIE', 'MoS\uc0\u8322 ', 'hBN', 'Graphene', 'Plasmonics', 'FET', 'ISO 6 Cleanroom'],\
-        images: [],\
-        links: [],\
-      \},\
-      echoflow: \{\
-        eyebrow: 'Academic Project \'b7 Sept 2024 \'96 Jan 2025',\
-        title: 'EchoFlow \'97 Ultrasonic Traffic Monitor',\
-        overview: 'Designed and built a distributed traffic-sensing network using Arduino microcontrollers and HC-SR04 ultrasonic sensors. The system estimates vehicle velocity from time-of-flight measurements across two sensor nodes. A scalar Kalman filter was implemented to suppress environmental noise, achieving a velocity estimation error below 20%.',\
-        highlights: [\
-          'Distributed sensor network with multiple Arduino nodes',\
-          'Ultrasonic time-of-flight velocity estimation',\
-          'Scalar Kalman filter for noise suppression',\
-          'Velocity estimation error < 20%',\
-          'Serial data logging and post-processing in Python',\
-        ],\
-        tags: ['Arduino', 'Kalman Filter', 'Signal Processing', 'Python', 'Sensor Fusion'],\
-        images: [],\
-        links: [],\
-      \},\
-    \};\
-\
-    /* \uc0\u9472 \u9472  OPEN / CLOSE \u9472 \u9472  */\
-    function openProject(id) \{\
-      const p = projects[id];\
-      document.getElementById('overlay-breadcrumb').textContent = p.title;\
-      document.getElementById('overlay-content').innerHTML = buildContent(id, p);\
-      document.getElementById('overlay').classList.add('open');\
-      document.body.style.overflow = 'hidden';\
-    \}\
-\
-    function closeProject() \{\
-      document.getElementById('overlay').classList.remove('open');\
-      document.body.style.overflow = '';\
-    \}\
-\
-    document.addEventListener('keydown', e => \{ if (e.key === 'Escape') \{ closeProject(); closeLightbox(); \} \});\
-\
-    /* \uc0\u9472 \u9472  BUILD HTML \u9472 \u9472  */\
-    function buildContent(id, p) \{\
-      const highlights = p.highlights.map(h =>\
-        `<li style="padding:4px 0;color:var(--fg-muted);font-size:14px;">\'97 $\{h\}</li>`\
-      ).join('');\
-\
-      const tags = p.tags.map(t => `<span class="tag">$\{t\}</span>`).join('');\
-\
-      let photosHtml = '';\
-      if (p.images && p.images.length > 0) \{\
-        photosHtml = p.images.map((src, index) => `\
-          <div class="gallery-slot" onclick="openLightbox('$\{src\}')">\
-            <img src="$\{src\}" alt="Photo $\{index + 1\}" />\
-          </div>\
-        `).join('');\
-      \} else \{\
-        // Fallback visivo se non ci sono ancora immagini configurate nell'array\
-        photosHtml = `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">Add image paths in the JS data object.</span>`;\
-      \}\
-\
-      const linksHtml = p.links.length\
-        ? p.links.map(l => `<a href="$\{l.url\}" target="_blank" class="link-chip">\uc0\u8599  $\{l.label\}</a>`).join('')\
-        : `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">Add links in the JS data object.</span>`;\
-\
-      return `\
-        <p class="overlay-eyebrow">$\{p.eyebrow\}</p>\
-        <h1 class="overlay-title">$\{p.title\}</h1>\
-        <div class="gallery">$\{photosHtml\}</div>\
-        <div class="content-block">\
-          <p class="content-block-label">Overview</p>\
-          <p>$\{p.overview\}</p>\
-        </div>\
-        <div class="content-block">\
-          <p class="content-block-label">Key contributions</p>\
-          <ul style="list-style:none;">$\{highlights\}</ul>\
-        </div>\
-        <div class="content-block">\
-          <p class="content-block-label">Technologies & methods</p>\
-          <div class="tag-row">$\{tags\}</div>\
-        </div>\
-        <div class="content-block">\
-          <p class="content-block-label">Links & resources</p>\
-          <div class="link-row">$\{linksHtml\}</div>\
-        </div>`;\
-    \}\
-\
-    /* \uc0\u9472 \u9472  LIGHTBOX \u9472 \u9472  */\
-    function openLightbox(src) \{\
-      document.getElementById('lightbox-img').src = src;\
-      document.getElementById('lightbox').classList.add('open');\
-    \}\
-\
-    function closeLightbox() \{\
-      document.getElementById('lightbox').classList.remove('open');\
-    \}\
-  </script>\
-</body>\
-</html>}
+    :root {
+      --bg: #f7f6f2;
+      --fg: #1a1916;
+      --fg-muted: #6b6960;
+      --fg-faint: #b0aea5;
+      --accent: #5b3fcf;
+      --accent-light: #ede9fb;
+      --accent-hover: #4a30b0;
+      --border: #dddbd4;
+      --surface: #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100; background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: 720px; margin: 0 auto; padding: 0 2rem;
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .logo {
+      font-family: 'DM Serif Display', serif; font-size: 17px;
+      color: var(--fg); text-decoration: none; letter-spacing: -0.02em;
+    }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a {
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+      text-decoration: none; color: var(--fg-muted); transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero { padding-top: 140px; padding-bottom: 80px; border-bottom: 1px solid var(--border); }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--fg); margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.05; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .hero-desc { max-width: 480px; color: var(--fg-muted); font-size: 15px; line-height: 1.85; margin-bottom: 2.5rem; font-weight: 400; }
+    .hero-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; padding: 10px 24px; background: var(--accent); color: #fff;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+      text-decoration: none; border-radius: var(--radius-sm); transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    
+    .btn-secondary {
+      background: var(--surface); color: var(--fg); border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background: var(--bg); border-color: var(--accent); color: var(--accent);
+    }
+
+    .hero-links a.link-plain, .hero-links button.link-plain {
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+      color: var(--fg-muted); text-decoration: none; border: none; background: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 1px;
+      cursor: pointer; transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-links a.link-plain:hover, .hero-links button.link-plain:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* SECTIONS */
+    section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--fg); margin-bottom: 3rem;
+    }
+
+    /* ABOUT */
+    .about-text { font-size: 16px; line-height: 1.85; color: var(--fg-muted); max-width: 600px; font-weight: 400; }
+    .about-text strong { color: var(--fg); font-weight: 500; }
+
+    /* TIMELINE */
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-item {
+      display: grid; grid-template-columns: 120px 1fr; gap: 0 2rem;
+      padding: 2rem 0; border-top: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .timeline-item:last-child { border-bottom: 1px solid var(--border); }
+    .timeline-item:hover .timeline-body h3 { color: var(--accent-hover); }
+    .timeline-date {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.02em;
+      color: var(--fg-muted); padding-top: 4px; line-height: 1.6;
+    }
+    .timeline-body h3 {
+      font-family: 'DM Serif Display', serif; font-size: 19px; font-weight: 400;
+      letter-spacing: -0.01em; color: var(--accent); margin-bottom: 4px; transition: color 0.2s;
+    }
+    .timeline-body .org {
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+      color: var(--fg); margin-bottom: 10px;
+    }
+    .timeline-body p { font-size: 14px; color: var(--fg-muted); line-height: 1.75; font-weight: 400; }
+    .timeline-arrow {
+      display: inline-block; margin-left: 8px; font-size: 13px;
+      color: var(--fg-faint); transition: transform 0.2s, color 0.2s;
+    }
+    .timeline-item:hover .timeline-arrow { transform: translateX(4px); color: var(--accent); }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .skill-block {
+      background: var(--surface); padding: 1.5rem;
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+    }
+    .skill-block h4 {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--fg); margin-bottom: 14px;
+    }
+    .skill-block ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-block ul li {
+      font-size: 12px; font-weight: 400; color: var(--fg-muted); background: var(--bg);
+      padding: 4px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .skill-block ul li:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+
+    /* EDUCATION */
+    .edu-item {
+      padding: 2rem 0; border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: 120px 1fr; gap: 0 2rem;
+    }
+    .edu-item:last-child { border-bottom: 1px solid var(--border); }
+    .edu-year { font-size: 12px; font-weight: 500; color: var(--fg-muted); padding-top: 4px; letter-spacing: 0.02em; }
+    .edu-body h3 {
+      font-family: 'DM Serif Display', serif; font-size: 19px; font-weight: 400;
+      letter-spacing: -0.01em; color: var(--accent); margin-bottom: 4px;
+    }
+    .edu-body .inst { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: var(--fg); margin-bottom: 10px; }
+    .edu-body p { font-size: 14px; color: var(--fg-muted); line-height: 1.75; font-weight: 400; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .contact-item {
+      background: var(--surface); border: 1px solid var(--border); padding: 1.5rem;
+      text-decoration: none; display: flex; flex-direction: column; gap: 6px;
+      border-radius: var(--radius-md); transition: background 0.2s, border-color 0.2s;
+    }
+    .contact-item:hover { background: var(--accent); border-color: var(--accent); }
+    .contact-item:hover .contact-label,
+    .contact-item:hover .contact-value { color: #fff; }
+    .contact-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--fg-muted); transition: color 0.2s;
+    }
+    .contact-value { font-size: 14px; font-weight: 400; color: var(--fg); transition: color 0.2s; }
+
+    /* FOOTER */
+    footer { padding: 3rem 0; display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-size: 11px; font-weight: 400; color: var(--fg-faint); letter-spacing: 0.06em; }
+
+    /* RESPONSIVE */
+    @media (max-width: 560px) {
+      .timeline-item, .edu-item { grid-template-columns: 1fr; gap: 4px; }
+      .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+      nav ul { gap: 1.2rem; }
+    }
+
+    /* ══ PROJECT OVERLAY ══ */
+    .overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: var(--bg); overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    .overlay.open { transform: translateY(0); }
+
+    .overlay-nav {
+      position: sticky; top: 0; background: var(--bg);
+      border-bottom: 1px solid var(--border); z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 52px;
+    }
+    .overlay-back {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--fg-muted); cursor: pointer;
+      border: none; background: none; transition: color 0.2s;
+    }
+    .overlay-back:hover { color: var(--accent); }
+    .overlay-back svg { width: 14px; height: 14px; }
+    .overlay-breadcrumb { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--fg-faint); letter-spacing: 0.06em; }
+
+    .overlay-content { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .overlay-eyebrow {
+      font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 1rem;
+    }
+    .overlay-title {
+      font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); margin-bottom: 2.5rem;
+    }
+
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 3rem; }
+    .gallery-slot {
+      aspect-ratio: 4/3; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      cursor: pointer; transition: border-color 0.2s, opacity 0.2s;
+      overflow: hidden; position: relative;
+    }
+    .gallery-slot:hover { border-color: var(--accent); opacity: 0.9; }
+    .gallery-slot img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: var(--radius-md);
+    }
+
+    /* CONTENT BLOCKS */
+    .content-block { margin-bottom: 2.5rem; }
+    .content-block-label {
+      font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-faint);
+      margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .content-block p { font-size: 15px; color: var(--fg-muted); line-height: 1.8; }
+
+    /* TAGS */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 12px; color: var(--accent); background: var(--accent-light);
+      padding: 4px 12px; border-radius: var(--radius-sm); border: 1px solid var(--accent);
+    }
+
+    /* LINK CHIPS */
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .link-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--fg-muted); text-decoration: none;
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 6px 14px; transition: border-color 0.2s, color 0.2s;
+    }
+    .link-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 300;
+      background: rgba(20,18,14,0.92);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s;
+    }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: var(--radius-md); object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none; color: #fff; cursor: pointer; opacity: 0.7; transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-close svg { width: 28px; height: 28px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="inner">
+      <a href="#" class="logo">Mattia Rumolo</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <header class="hero">
+      <p class="hero-eyebrow">Engineering Physics · Politecnico di Milano</p>
+      <h1>Nano-systems<br />& Embedded<br />Engineering</h1>
+      <p class="hero-desc">M.Sc. candidate specialising in 2D material device physics, ISO-classified cleanroom nano-fabrication, and ultra-low-power embedded firmware. Based in Milan.</p>
+      <div class="hero-links">
+        <a href="mailto:mattia.rumolo@mail.polimi.it" class="btn-primary">Get in touch</a>
+        <a href="assets/Mattia_Rumolo_Resume_Definitivo.pdf" download="Mattia_Rumolo_CV.pdf" class="btn-primary btn-secondary">Download CV</a>
+        <button class="link-plain" id="copy-btn" onclick="copyEmail()">Copy email</button>
+        <a href="https://linkedin.com/in/mattia-rumolo" target="_blank" class="link-plain">LinkedIn ↗</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <p class="section-label">About</p>
+      <p class="about-text">
+        I work at the intersection of <strong>condensed matter physics</strong> and <strong>embedded engineering</strong> — from fabricating 2D heterostructure transistors in ISO 6 cleanrooms to writing low-power firmware for smart wearable devices.<br /><br />
+        My M.Sc. curriculum at Politecnico di Milano was co-developed with <strong>STMicroelectronics</strong>, with a focus on extreme miniaturisation, solid-state device modelling, and advanced MEMS integration. I enjoy problems that live at the boundary between the physical world and the digital one.
+      </p>
+    </section>
+
+    <section id="projects">
+      <p class="section-label">Research & Projects</p>
+      <div class="timeline">
+
+        <div class="timeline-item" onclick="openProject('eyewear')">
+          <div class="timeline-date">Feb 2025<br />– Present</div>
+          <div class="timeline-body">
+            <h3>Smart Sensory Eyewear <span class="timeline-arrow">→</span></h3>
+            <div class="org">EssilorLuxottica Smart Eyewear Lab</div>
+            <p>Developing STM32U5 firmware (Cortex-M33) that interfaces an AS7341 spectrometer and a digital MEMS microphone for a smart-glasses prototype. Power optimised through LPBAM Stop 2 mode acquisition.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="openProject('keyboard')">
+          <div class="timeline-date">Spring 2026</div>
+          <div class="timeline-body">
+            <h3>Custom Mechanical Keyboard <span class="timeline-arrow">→</span></h3>
+            <div class="org">Hardware Prototyping</div>
+            <p>Designed and assembled a mechanical keyboard from scratch, including custom PCB design, 3D-printed housing (PETG), and embedded firmware configuration.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="openProject('mos2')">
+          <div class="timeline-date">May 2024<br />– Sept 2024</div>
+          <div class="timeline-body">
+            <h3>Plasmon-Enhanced MoS₂ Transistor <span class="timeline-arrow">→</span></h3>
+            <div class="org">L-NESS & PoliFab — B.Sc. Thesis</div>
+            <p>Engineered a 2D heterostructure FET with a graphene back-gate, hBN dielectric, and MoS₂ channel. Added Au plasmonic nanostructures to enhance light responsivity.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" onclick="openProject('echoflow')">
+          <div class="timeline-date">Sept 2024<br />– Jan 2025</div>
+          <div class="timeline-body">
+            <h3>EchoFlow — Ultrasonic Traffic Monitor <span class="timeline-arrow">→</span></h3>
+            <div class="org">Academic Project</div>
+            <p>Designed a distributed traffic-sensing network with Arduino and ultrasonic sensors. Implemented scalar Kalman filtering for noise reduction, achieving velocity estimation error below 20%.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="section-label">Technical Skills</p>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h4>Nano-fabrication</h4>
+          <ul><li>EBL · Raith Voyager</li><li>RIE</li><li>PVD · ALD</li><li>Spin Coating</li><li>ISO 6/8 Cleanroom</li></ul>
+        </div>
+        <div class="skill-block">
+          <h4>Device Physics</h4>
+          <ul><li>Solid-State Physics</li><li>2D Materials (MoS₂, hBN, Graphene)</li><li>FET Architecture</li><li>MEMS Design</li><li>Quantum Mechanics</li></ul>
+        </div>
+        <div class="skill-block">
+          <h4>Embedded Systems</h4>
+          <ul><li>STM32U5 · Cortex-M33</li><li>Embedded C</li><li>LPBAM</li><li>PCB Design</li><li>Arduino</li><li>3D Printing (PETG)</li></ul>
+        </div>
+        <div class="skill-block">
+          <h4>Software</h4>
+          <ul><li>Python · MATLAB</li><li>C</li><li>Altium Designer</li><li>CubeMX</li><li>Git · LaTeX</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <p class="section-label">Education</p>
+      <div class="edu-item">
+        <div class="edu-year">2025 – 2027</div>
+        <div class="edu-body">
+          <h3>M.Sc. Engineering Physics</h3>
+          <div class="inst">Politecnico di Milano</div>
+          <p>Micro and Nano-systems track, co-developed with STMicroelectronics. Core topics: condensed matter physics, semiconductor device physics, physical modelling & simulation, advanced nano-fabrication, and MEMS integration.</p>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">2022 – 2025</div>
+        <div class="edu-body">
+          <h3>B.Sc. Physics Engineering</h3>
+          <div class="inst">Politecnico di Milano</div>
+          <p>Focus on quantum mechanics, optics, and material science. Thesis: <em>Fabrication and characterisation of integrated plasmonic structures on an MoS₂ transistor</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <div class="contact-grid">
+        <a href="mailto:mattia.rumolo@mail.polimi.it" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">mattia.rumolo@mail.polimi.it</span>
+        </a>
+        <a href="https://linkedin.com/in/mattia-rumolo" target="_blank" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/mattia-rumolo</span>
+        </a>
+        <a href="#" class="contact-item">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Milan, Italy</span>
+        </a>
+        <a href="#" class="contact-item">
+          <span class="contact-label">Languages</span>
+          <span class="contact-value">Italian (native) · English C1</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Mattia Rumolo</p>
+      <p>Milan, Italy</p>
+    </footer>
+  </div>
+
+  <!-- PROJECT OVERLAY -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true">
+    <div class="overlay-nav">
+      <button class="overlay-back" onclick="closeProject()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Back
+      </button>
+      <span class="overlay-breadcrumb" id="overlay-breadcrumb"></span>
+    </div>
+    <div class="overlay-content" id="overlay-content"></div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+  </div>
+
+  <script>
+    /* ── COPY EMAIL ── */
+    function copyEmail() {
+      navigator.clipboard.writeText('mattia.rumolo@mail.polimi.it').then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = 'Copied ✓';
+        btn.style.color = 'var(--accent)';
+        btn.style.borderColor = 'var(--accent)';
+        setTimeout(() => {
+          btn.textContent = 'Copy email';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      });
+    }
+
+    /* ── PROJECT DATA (STATIC) ── */
+    const projects = {
+      eyewear: {
+        eyebrow: 'EssilorLuxottica Smart Eyewear Lab · Feb 2025 – Present',
+        title: 'Smart Sensory Eyewear',
+        overview: 'Developing STM32U5 (Cortex-M33) firmware for a smart-glasses prototype that fuses light-spectrum and acoustic data in real time. The device uses an AS7341 11-channel spectrometer and a digital MEMS microphone, both acquired via LPBAM in Stop 2 mode to minimise power draw. The embedded C pipeline performs on-chip environmental hazard detection without cloud offload.',
+        highlights: [
+          'STM32U5 ultra-low-power firmware with LPBAM Stop 2 acquisition',
+          'AS7341 11-channel spectrometer integration via I²C',
+          'Digital MEMS microphone + real-time signal processing',
+          'On-device environmental hazard detection algorithms',
+          'PCB design with Altium Designer',
+        ],
+        tags: ['STM32U5', 'Cortex-M33', 'Embedded C', 'LPBAM', 'AS7341', 'MEMS', 'PCB Design'],
+        images: [
+          'https://images.unsplash.com/photo-1572635196237-14b3f281501f?auto=format&fit=crop&q=80&w=800'
+        ],
+        links: [],
+      },
+      keyboard: {
+        eyebrow: 'Personal Hardware Project · Spring 2026',
+        title: 'Custom Mechanical Keyboard',
+        overview: 'Designed and assembled a mechanical keyboard completely from scratch. The project involved routing a custom PCB for the switch matrix and microcontroller, and designing an industrial-style housing printed in PETG to ensure structural integrity. This project bridges the gap between digital electronic design and physical manufacturing.',
+        highlights: [
+          'Custom PCB design and routing for the switch matrix',
+          'Sourcing and integration of specialized keycap components',
+          '3D modeling and printing of the housing using PETG',
+          'Firmware configuration for custom keymaps',
+        ],
+        tags: ['PCB Design', '3D Printing', 'PETG', 'Hardware Prototyping', 'CAD'],
+        images: [],
+        links: [],
+      },
+      mos2: {
+        eyebrow: 'L-NESS & PoliFab, Politecnico di Milano · May – Sept 2024',
+        title: 'Plasmon-Enhanced MoS₂ Transistor',
+        overview: 'B.Sc. thesis project focused on the end-to-end nano-fabrication and optical characterisation of a 2D heterostructure field-effect transistor. The device stack consists of a graphene back-gate, hexagonal boron nitride (hBN) dielectric, and monolayer MoS₂ channel. Gold plasmonic nanostructures were patterned on top to enhance photoresponsivity through localised surface-plasmon resonance.',
+        highlights: [
+          'Full nano-fabrication workflow in ISO 6 cleanroom',
+          'Electron Beam Lithography (EBL) with Raith Voyager',
+          'Reactive Ion Etching (RIE) and e-beam deposition',
+          '2D heterostructure assembly: graphene / hBN / MoS₂',
+          'Au plasmonic nanostructure integration',
+          'Electrical & optical characterisation of FET response',
+        ],
+        tags: ['EBL', 'RIE', 'MoS₂', 'hBN', 'Graphene', 'Plasmonics', 'FET', 'ISO 6 Cleanroom'],
+        images: [],
+        links: [],
+      },
+      echoflow: {
+        eyebrow: 'Academic Project · Sept 2024 – Jan 2025',
+        title: 'EchoFlow — Ultrasonic Traffic Monitor',
+        overview: 'Designed and built a distributed traffic-sensing network using Arduino microcontrollers and HC-SR04 ultrasonic sensors. The system estimates vehicle velocity from time-of-flight measurements across two sensor nodes. A scalar Kalman filter was implemented to suppress environmental noise, achieving a velocity estimation error below 20%.',
+        highlights: [
+          'Distributed sensor network with multiple Arduino nodes',
+          'Ultrasonic time-of-flight velocity estimation',
+          'Scalar Kalman filter for noise suppression',
+          'Velocity estimation error < 20%',
+          'Serial data logging and post-processing in Python',
+        ],
+        tags: ['Arduino', 'Kalman Filter', 'Signal Processing', 'Python', 'Sensor Fusion'],
+        images: [],
+        links: [],
+      },
+    };
+
+    /* ── OPEN / CLOSE ── */
+    function openProject(id) {
+      const p = projects[id];
+      if (!p) return; // Controllo di sicurezza
+      
+      document.getElementById('overlay-breadcrumb').textContent = p.title;
+      document.getElementById('overlay-content').innerHTML = buildContent(id, p);
+      document.getElementById('overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProject() {
+      document.getElementById('overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeProject(); closeLightbox(); } });
+
+    /* ── BUILD HTML ── */
+    function buildContent(id, p) {
+      const highlights = p.highlights.map(h =>
+        `<li style="padding:4px 0;color:var(--fg-muted);font-size:14px;">— ${h}</li>`
+      ).join('');
+
+      const tags = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+      let photosHtml = '';
+      if (p.images && p.images.length > 0) {
+        photosHtml = p.images.map((src, index) => `
+          <div class="gallery-slot" onclick="openLightbox('${src}')">
+            <img src="${src}" alt="Photo ${index + 1}" />
+          </div>
+        `).join('');
+      } else {
+        photosHtml = `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">Add image paths in the JS data object.</span>`;
+      }
+
+      const linksHtml = p.links && p.links.length
+        ? p.links.map(l => `<a href="${l.url}" target="_blank" class="link-chip">↗ ${l.label}</a>`).join('')
+        : `<span style="font-size:13px;color:var(--fg-faint);font-family:'DM Mono',monospace;">Add links in the JS data object.</span>`;
+
+      return `
+        <p class="overlay-eyebrow">${p.eyebrow}</p>
+        <h1 class="overlay-title">${p.title}</h1>
+        <div class="gallery">${photosHtml}</div>
+        <div class="content-block">
+          <p class="content-block-label">Overview</p>
+          <p>${p.overview}</p>
+        </div>
+        <div class="content-block">
+          <p class="content-block-label">Key contributions</p>
+          <ul style="list-style:none;">${highlights}</ul>
+        </div>
+        <div class="content-block">
+          <p class="content-block-label">Technologies & methods</p>
+          <div class="tag-row">${tags}</div>
+        </div>
+        <div class="content-block">
+          <p class="content-block-label">Links & resources</p>
+          <div class="link-row">${linksHtml}</div>
+        </div>`;
+    }
+
+    /* ── LIGHTBOX ── */
+    function openLightbox(src) {
+      if(!src) return;
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  </script>
+</body>
+</html>
